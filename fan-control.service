@@ -1,0 +1,13 @@
+[Unit]
+Description=Raspberry Pi fan control
+
+[Service]
+Type=simple
+TimeoutStartSec=0
+Restart=always
+RestartSec=10s
+Environment="FAN_CTRL_PIN=17"
+ExecStart=/usr/local/bin/fan-ctrl.py
+
+[Install]
+WantedBy=multi-user.target
